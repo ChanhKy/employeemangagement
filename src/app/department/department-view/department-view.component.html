@@ -1,0 +1,60 @@
+<div class=" d-flex float-right  mt-3 ml-3 mr-3" style="width: 97%; background-color: #fff;">
+  <div class="row">
+    <div class="col-6" *ngIf="department != null">
+      <div class=" col-12  form-group mb-2 ml-3 row border-bottom">
+        <label class="col-4 col-form-label">
+          <p>Tên phòng ban</p>
+        </label>
+        <div class="col-8 mb-2">
+          <h3>{{department.departmentName}}</h3>
+        </div>
+      </div>
+      <div class=" col-12  form-group ml-3 row border-bottom">
+        <label class="col-4 col-form-label">
+          <p>Mã phòng ban</p>
+        </label>
+        <div class="col-8 mt-2">
+          <p>{{department.departmentId}}</p>
+        </div>
+      </div>
+      <div class=" col-12  form-group mb-2 ml-3 row border-bottom">
+        <label class="col-4 col-form-label">
+          <p>Mô tả </p>
+        </label>
+        <div class="col-8 mb-2">
+          <p class="text-trai-phai">{{department.description}}</p>
+        </div>
+      </div>
+      <div class="col-12 mb-3 d-flex justify-content-end">
+        <a type="button" class="btn-close btn btn-secondary mr-2" mat-raised-button
+          [routerLink]="['/department/list']">Back</a>
+      </div>
+    </div>
+    <div class="col-6 mt-1" *ngIf="employees.length > 0">
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Stt</th>
+            <th scope="col">Name</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Day of birth </th>
+            <th scope="col">Phone</th>
+          </tr>
+        </thead>
+        <tbody id="tbody" *ngIf="employees.length > 0">
+          <tr *ngFor="let employee of employees; index as i">
+            <td>{{i+1}}</td>
+            <td> <a [routerLink]="['/employee/view', employee.employeeId]"> {{employee.employeeName}} </a></td>
+            <td>{{employee.employeeGender}}</td>
+            <td>{{employee.dayOfBirth | date : "dd-MM-yyyy"}}</td>
+            <td>{{employee.employeePhone}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="img-account">
+   <img  src="https://www.shareicon.net/data/512x512/2016/05/24/770117_people_512x512.png" alt="ảnh chân dung nhân viên">
+</div> -->

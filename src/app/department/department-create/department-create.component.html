@@ -1,0 +1,50 @@
+<div class="mt-3 ml-3 mr-3">
+  <form focusInvalidInput [formGroup]="departmentForm"  novalidate>
+
+    <div class="form-group mb-2 row border-bottom">
+      <label for="inputEmail3" class="col-sm-3 col-form-label">
+        <strong>Department name</strong>
+      </label>
+      <div class="col-sm-9 mb-2">
+
+        <input type="text" class="form-control" id="departmentName" formControlName="departmentName"  (keyup)="checkDuplicate($event.target.value)" autofocus>
+        <div *ngIf="!departmentName?.valid && (departmentName.dirty || departmentName.touched)">
+          <div [hidden]="!departmentName.errors.required" class="text-danger">
+            {{requiredDepart}}
+          </div>
+          <div [hidden]="!departmentName.errors.maxlength" class="text-danger">
+            {{maxDepart}}
+          </div>
+          <div [hidden]="!departmentName.errors.pattern" class="text-danger">
+            {{patternDepart}}
+          </div>
+          <div [hidden]="!departmentName.errors.isDuplicate" class="text-danger">
+            {{messageDuplicate}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row ">
+      <label for="inputEmail3" class="col-sm-3 col-form-label"><strong>Description</strong></label>
+      <div class="col-sm-9 mb-2">
+
+        <textarea type="text" class="form-control" formControlName="description" rows="5"></textarea>
+        <div *ngIf="!description?.valid && (description.dirty || description.touched)">
+          <div [hidden]="!description.errors.required" class="text-danger">
+            {{reqiuredDes}}
+          </div>
+          <div [hidden]="!description.errors.maxlength" class="text-danger">
+            {{maxlength}}
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="modal-footer d-flex justify-content-center">
+      <button type="button" class="btn-close btn btn-secondary" (click)="resetForm()">Reset</button>
+      <button type="submit" class="btn-add btn btn-primary" id="btn-add" (click)="onSubmit()" > Add Department</button>
+    </div>
+  </form>
+
+</div>

@@ -1,0 +1,191 @@
+<div class="mt-3 ml-3 mr-3 ">
+
+  <form focusInvalidInput [formGroup]="employeeForm" novalidate>
+    <div class="row">
+      <div class=" col-6  form-group mb-2 ml-3 row ">
+        <label class="col-3 col-form-label">
+          <!-- <strong>Employee ID </strong> -->
+        </label>
+        <div class="col-9 mb-2">
+          <input type="text" class="form-control" formControlName="employeeId" hidden>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class=" col-6  form-group mb-2 ml-3 row border-bottom">
+        <label class="col-3 col-form-label">
+          <strong>Employee ID </strong>
+        </label>
+        <div class="col-9 mb-2">
+          <input type="text" class="form-control" id="employeeName" formControlName="employeeId" readonly autofocus>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 form-group mb-2 ml-3 row border-bottom">
+        <label class="col-3 col-form-label">
+          <strong>Name </strong>
+        </label>
+        <div class="col-9 mb-2">
+          <input type="text" class="form-control" formControlName="employeeName">
+
+          <div *ngIf="!employeeName?.valid && (employeeName.dirty || employeeName.touched)">
+            <div [hidden]="!employeeName.errors.required" class="text-danger">
+              {{requiredName}}
+            </div>
+            <div [hidden]="!employeeName.errors.minlength" class="text-danger">
+              {{minlength}}
+            </div>
+            <div [hidden]="!employeeName.errors.maxlength" class="text-danger">
+              {{maxlengthName}}
+            </div>
+            <div [hidden]="!employeeName.errors.pattern" class="text-danger">
+              {{pattern}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class=" col-6 form-group mb-2 row border-bottom">
+        <label class="col-3 col-form-label">
+          <strong>Gender </strong>
+        </label>
+        <div class="col-9 mb-2">
+          <select class="form-control" formControlName="employeeGender">
+            <!-- <option value = "" [selected]=true hidden> --Chọn giới tính-- </option > -->
+            <option value="Nam">Nam</option>
+            <option value="Nữ">Nữ</option>
+            <option value="Khác">Khác</option>
+          </select>
+          <div *ngIf="!employeeGender?.valid && (employeeGender.dirty || employeeGender.touched)">
+            <div [hidden]="!employeeGender.errors.required" class="text-danger">
+              {{requiredGender}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class=" col-6  form-group mb-2 ml-3 row border-bottom">
+        <label class="col-3 col-form-label">
+          <strong>Day of birth </strong>
+        </label>
+        <div class="col-9 mb-2">
+          <input type="date" class="form-control" formControlName="dayOfBirth">
+          <div *ngIf="!dayOfBirth?.valid && (dayOfBirth.dirty || dayOfBirth.touched)">
+            <div [hidden]="!dayOfBirth.errors.required" class="text-danger">
+              {{requiredDayOfbirth}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class=" col-6  form-group mb-2 row border-bottom">
+        <label class="col-3 col-form-label">
+          <strong>Phone </strong>
+        </label>
+        <div class="col-9 mb-2">
+          <input type="text" class="form-control" formControlName="employeePhone" maxlength="10">
+          <div *ngIf="!employeePhone?.valid && (employeePhone.dirty || employeePhone.touched)">
+            <div [hidden]="!employeePhone.errors.required" class="text-danger">
+              {{requiredPhone}}
+            </div>
+            <div [hidden]="!employeePhone.errors.pattern" class="text-danger">
+              {{partternDT}}
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+
+      <div class=" col-6  form-group mb-2 ml-3 row border-bottom">
+        <label class="col-3 col-form-label">
+          <strong>Address </strong>
+        </label>
+        <div class="col-9 mb-2">
+          <input type="text" class="form-control" formControlName="employeeAddress">
+          <div *ngIf="!employeeAddress?.valid && (employeeAddress.dirty || employeeAddress.touched)">
+            <div [hidden]="!employeeAddress.errors.required" class="text-danger">
+              {{requiredAddress}}
+            </div>
+            <div [hidden]="!employeeAddress.errors.maxlength" class="text-danger">
+              {{maxlengthAddress}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class=" col-6  form-group mb-2 row border-bottom">
+        <label class="col-3 col-form-label">
+          <strong>Position </strong>
+        </label>
+        <div class="col-9 mb-2">
+          <select class="form-control" formControlName="employeePosition">
+            <!-- <option value = "" [selected]=true hidden> --Chọn chức vụ-- </option > -->
+            <option value="Nhân viên">Nhân viên</option>
+            <option value="Trưởng nhóm">Trưởng nhóm</option>
+            <option value="Trưởng phòng">Trưởng phòng</option>
+            <option value="Giám đốc">Giám đốc</option>
+
+          </select>
+          <div *ngIf="!employeePosition?.valid && (employeePosition.dirty || employeePosition.touched)">
+            <div [hidden]="!employeePosition.errors.required" class="text-danger">
+              {{requiredPosition}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class=" col-6  form-group mb-2 ml-3 row border-bottom">
+        <label class="col-3 col-form-label">
+          <strong>Salary </strong>
+        </label>
+        <div class="col-9 mb-2">
+          <input type="text" class="form-control" formControlName="employeeSalary" maxlength="10">
+          <div *ngIf="!employeeSalary?.valid && (employeeSalary.dirty || employeeSalary.touched)">
+            <div [hidden]="!employeeSalary.errors.required" class="text-danger">
+              {{requiredSalary}}
+            </div>
+            <div [hidden]="!employeeSalary.errors.maxlength" class="text-danger">
+              {{maxlengthSalary}}
+            </div>
+            <div [hidden]="!employeeSalary.errors.pattern" class="text-danger">
+              {{partternSalary}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class=" col-6  form-group mb-2 row border-bottom">
+        <label class="col-3 col-form-label">
+          <strong>Department </strong>
+        </label>
+        <div class="col-9 mb-2">
+          <div formGroupName="department">
+            <select class="col-12 form-control" formControlName="departmentId">
+
+              <!-- <option value = "" [selected]=true hidden> --Choose department-- </option > -->
+
+              <option *ngFor="let d of departments" [value]="d.departmentId">{{d.departmentName}}</option>
+            </select>
+          </div>
+
+          <div *ngIf="!department?.valid && (department.dirty || department.touched)">
+            <div [hidden]="!departmentId.errors.required" class="text-danger">
+              {{requiredDepart}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="modal-footer d-flex justify-content-center">
+      <button type="button" class="btn-close btn btn-secondary mr-2" mat-raised-button
+        [routerLink]="['/employee/list']">Back</button>
+      <button type="submit" class="btn-add btn btn-primary" id="btn-edit" mat-raised-button (click)="onSubmit()"> Edit
+        employee</button>
+    </div>
+  </form>
+
+</div>

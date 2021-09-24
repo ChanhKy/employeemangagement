@@ -1,0 +1,45 @@
+
+
+<div class="float-left mt-3  rounded bg-while " style="margin-left: 3vh; width: 16%; height: 39vh; background-color: #fff;">
+
+    <nav class="nav mb-3"  >
+
+      <a  [routerLink]="['/dashboard']"  class="nav-item border-bottom" active-color="DarkSlateBlue"> <i class="fas fa-home"></i> Dashboard</a>
+      <a  [routerLink]= "['/department/list']" class="nav-item border-bottom" active-color="DarkKhaki"> <i class="fas fa-layer-group"></i> Department</a>
+      <a  [routerLink]="['/employee/list']" class="nav-item border-bottom" active-color="DeepPink"> <i class="fas fa-user-tie"></i> Emloyee</a>
+      <a href="#" class="nav-item border-bottom" active-color="LimeGreen"> <i class="fas fa-coins"></i> Salary</a>
+      <!-- <span class="nav-indicator"></span> -->
+    </nav>
+    <mat-card class="demo-inline-calendar-card">
+      <mat-calendar (selectedChange)="selected = $event"></mat-calendar>
+    </mat-card>
+    <!-- <p>Selected date: {{selected}}</p> -->
+  </div>
+
+
+<!-- <script>
+
+  var indicator = document.querySelector('.nav-indicator');
+  var items = document.querySelectorAll('.nav-item');
+ function handleIndicator(el) {
+      items.forEach(function (item) {
+          item.classList.remove('is-active');
+          item.removeAttribute('style');
+      });
+      indicator.style.width = "".concat(el.offsetWidth, "px");
+      indicator.style.left = "".concat(el.offsetLeft, "px");
+      indicator.style.backgroundColor = el.getAttribute('active-color');
+      el.classList.add('is-active');
+      el.style.color = el.getAttribute('active-color');
+  }
+ items.forEach(function (item, index) {
+      item.addEventListener('click', function (e) {
+          handleIndicator(e.target);
+      });
+      item.classList.contains('is-active') && handleIndicator(item);
+  });
+
+</script> -->
+
+
+

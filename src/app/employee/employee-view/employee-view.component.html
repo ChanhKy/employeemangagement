@@ -1,0 +1,79 @@
+<div class=" d-flex float-right  mt-3 ml-3 mr-3" style="width: 97%; background-color: #fff;">
+  <div class="row d-flex">
+    <div class="col-6">
+      <div class=" col-12  form-group mb-2 ml-3 row border-bottom">
+        <label class="col-3 col-form-label">
+          <p>Tên nhân viên </p>
+        </label>
+        <div class="col-9 mb-2">
+          <h3>{{employee.employeeName}}</h3>
+        </div>
+      </div>
+      <div class=" col-12  form-group mb-2 ml-3 row border-bottom">
+        <label class="col-3 col-form-label">
+          <p>Chức vụ </p>
+        </label>
+        <div class="col-9 mb-2">
+          <p>{{employee.employeePosition}}</p>
+        </div>
+      </div>
+      <div class=" col-12  form-group mb-2 ml-3 row border-bottom">
+        <label class="col-3 col-form-label">
+          <p>Phòng ban </p>
+        </label>
+        <div class="col-9 mb-2">
+          <p>{{employee.department.departmentName}}</p>
+        </div>
+      </div>
+      <div class=" col-12  form-group mb-2 ml-3 row border-bottom">
+        <label class="col-3 col-form-label">
+          <p>Mã nhân viên </p>
+        </label>
+        <div class="col-9 mb-2">
+          <p>{{employee.employeeId}}</p>
+        </div>
+      </div>
+      <div class=" col-12  form-group mb-2 ml-3 row border-bottom">
+        <label class="col-3 col-form-label">
+          <p>Giới tính </p>
+        </label>
+        <div class="col-9 mb-2">
+          <p>{{employee.employeeGender}}</p>
+        </div>
+      </div>
+      <div class=" col-12  form-group mb-2 ml-3 row border-bottom">
+        <label class="col-3 col-form-label">
+          <p> Ngày sinh </p>
+        </label>
+        <div class="col-9 mb-2">
+          <p>{{employee.dayOfBirth |date : "dd-MM-yyyy"}}</p>
+        </div>
+      </div>
+      <div class=" col-12  form-group mb-2 ml-3 row border-bottom">
+        <label class="col-3 col-form-label">
+          <p> Điện thoại </p>
+        </label>
+        <div class="col-9 mb-2">
+          <p>{{employee.employeePhone}}</p>
+        </div>
+      </div>
+      <div class=" col-12  form-group mb-2 ml-3 row border-bottom">
+        <label class="col-3 col-form-label">
+          <p> Địa chỉ </p>
+        </label>
+        <div class="col-9 mb-2">
+          <p>{{employee.employeeAddress}}</p>
+        </div>
+      </div>
+      <div class= "col-12 mb-3 d-flex justify-content-end">
+        <a type="button" class="btn-close btn btn-secondary mr-2"  mat-raised-button [routerLink]="['/employee/list']" >Back</a>
+      </div>
+    </div>
+    <div class="col-6">abc</div>
+  </div>
+
+</div>
+
+<!-- <div class="img-account">
+   <img  src="https://www.shareicon.net/data/512x512/2016/05/24/770117_people_512x512.png" alt="ảnh chân dung nhân viên">
+</div> -->

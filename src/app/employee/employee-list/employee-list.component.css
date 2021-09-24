@@ -1,0 +1,93 @@
+  .active-pink-2 input[type=search]:focus:not([readonly]) {
+  border-bottom: 1px solid #f48fb1;
+  box-shadow: 0 1px 0 0 #f48fb1;
+  }
+  .example-button-row {
+    display: table-cell;
+    width: 490px;
+  }
+
+  .example-button-row {
+    margin: 8px 8px 8px 0;
+  }
+
+  .icon-del-input{
+    background-color:#e7e4e5 ;
+    opacity: 0.5;
+  }
+  .icon-del-input:hover {
+    cursor: pointer;
+  }
+  td {
+    padding: 4px 2px 0 12px ;
+  }
+  .ngatDoanName{
+    white-space: nowrap;
+    /* border: solid 1px; */
+    width: 125px;
+    /* height: 20px; */
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: justify;
+    margin-bottom: 0;
+  }
+
+  .ngatDoan {
+    white-space: nowrap;
+    /* border: solid 1px; */
+    width: 100px;
+    height: 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: justify;
+    margin-bottom: 0;
+  /* }
+  #tooltip { */
+    /* position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+
+    margin: auto;
+    width: 150px;
+    height: 35px;
+    line-height: 35px;
+    background: yellow;
+    display: block;
+    margin-top: 20px; */
+  }
+
+  #tooltip .tooltiptext {
+    visibility: hidden;
+    position: absolute;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1s;
+
+    bottom: 120%;
+    left: 10%;
+  }
+
+  #tooltip:hover .tooltiptext{
+    visibility: visible;
+    opacity: 1;
+  }
+  .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+
+
+
